@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  gerrit-code-review-mcp:
+    build: .
+    image: gerrit-code-review-mcp
+    environment:
+      - GERRIT_BASE_URL=${GERRIT_BASE_URL}
+      - GERRIT_USERNAME=${GERRIT_USERNAME}
+      - GERRIT_PASSWORD=${GERRIT_PASSWORD}
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
